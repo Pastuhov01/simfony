@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Read: Регестрация{% endblock %}
+{% block body %}
+
+
+
+        
+  
+
+
+
+<form name='reg' action='{{ path('register') }}' method='post'>
+    
+    <p>
+        Логин: <input type='text' name='nickname' />
+    </p>
+    <p>
+        E-mail: <input type='text' name='email' />
+    </p>
+    <p>Информация о себе:</p>
+    <p><textarea rows="10" cols="30" name="text"></textarea></p>
+    <p>
+        Пароль: <input type='password' name='password' />
+    </p>
+    <p>
+        <input type='submit' name='reg' value='Отправить' />
+    </p>
+</form>
+        
+        
+  
+{% endblock %}

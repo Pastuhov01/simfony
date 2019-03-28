@@ -3,6 +3,7 @@ namespace App\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\Article1Repository;
 class ArticleController extends AbstractController
 {
     /**
@@ -62,6 +63,10 @@ if (isset($_POST['reg'])) {
         $text =  preg_replace_callback('/\p{Lu}/u', function($matches){
         return mb_strtolower($matches[0], "utf-8");}, $_POST['text']);
 
+        
+        
+        
+        
     echo "Вы ввели Логин:$nickname<br/>Вы ввелиE-mail:$email<br/>";
     echo "Вы ввели Текст:$text<br/>";
     //exit;
@@ -87,5 +92,13 @@ if (isset($_POST['reg'])) {
     {
         return $this->render('article/news.html.twig');
     }
-    
+    /**
+     * @Route("/news/all_news", name="all_news")
+     */
+        public function myNews(Article1Repository $articleRepository)
+    {
+       $articles = $articleRepository->findAll();
+       dump($articles);
+        return $this->render('article/news.html.twig', compact('articles'));
+    }
 }

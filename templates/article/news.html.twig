@@ -9,11 +9,22 @@
         
 
     </div>
+     
+    {% for value in articles %}
     
-    {% for allNews in articles %}
-    {{article1.title}}
+    
+    {{value.content}}
     <br>
+    
+     {{value.id}}
+    <br>
+   
+    
+  
+    
     {% endfor %}
+     {{articles.1.content}}
+      
     
 {% endblock %}
 

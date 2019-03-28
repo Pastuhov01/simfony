@@ -8,7 +8,7 @@ use App\Repository\Article1Repository;
 class MyController extends AbstractController
 {
     /**
-     * @Route("/моя новость", name="my_news")
+     * @Route("/my_news", name="my_news")
      */
     public function myNews(Article1Repository $articleRepository)
     {
@@ -17,7 +17,7 @@ class MyController extends AbstractController
         return $this->render('article/news.html.twig', compact('articles'));
     }
  /**
-     * @Route("/все новости", name="all_news")
+     * @Route("/all_news", name="all_news")
      */
     public function allNews()
     {

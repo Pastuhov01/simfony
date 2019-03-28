@@ -87,4 +87,5 @@ if (isset($_POST['reg'])) {
     {
         return $this->render('article/news.html.twig');
     }
+    
 }
